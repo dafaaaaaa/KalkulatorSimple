@@ -10,53 +10,54 @@ public class Kalkulator {
     /**
      * Menjumlahkan dua bilangan.
      *
-     * @param angka1 Bilangan pertama
-     * @param angka2 Bilangan kedua
-     * @return Hasil penjumlahan angka1 dan angka2
+     * @param bilanganPertama Bilangan pertama
+     * @param bilanganKedua Bilangan kedua
+     * @return Hasil penjumlahan bilanganPertama dan bilanganKedua
      */
-    public double tambah(double angka1, double angka2) {
-        return angka1 + angka2;
+    public double tambah(double bilanganPertama, double bilanganKedua) {
+        return bilanganPertama + bilanganKedua;
     }
 
     /**
      * Mengurangi bilangan kedua dari bilangan pertama.
      *
-     * @param angka1 Bilangan pertama
-     * @param angka2 Bilangan kedua
-     * @return Hasil pengurangan angka1 dan angka2
+     * @param bilanganPertama Bilangan pertama
+     * @param bilanganKedua Bilangan kedua
+     * @return Hasil pengurangan bilanganPertama dan bilanganKedua
      */
-    public double kurang(double angka1, double angka2) {
-        return angka1 - angka2;
+    public double kurang(double bilanganPertama, double bilanganKedua) {
+        return bilanganPertama - bilanganKedua;
     }
 
     /**
      * Mengalikan dua bilangan.
      *
-     * @param angka1 Bilangan pertama
-     * @param angka2 Bilangan kedua
-     * @return Hasil perkalian angka1 dan angka2
+     * @param bilanganPertama Bilangan pertama
+     * @param bilanganKedua Bilangan kedua
+     * @return Hasil perkalian bilanganPertama dan bilanganKedua
      */
-    public double kali(double angka1, double angka2) {
-        return angka1 * angka2;
+    public double kali(double bilanganPertama, double bilanganKedua) {
+        return bilanganPertama * bilanganKedua;
     }
 
     /**
      * Membagi bilangan pertama dengan bilangan kedua.
      *
-     * @param angka1 Bilangan pertama
-     * @param angka2 Bilangan kedua
-     * @return Hasil pembagian angka1 dengan angka2
-     * @throws ArithmeticException jika angka2 adalah nol
+     * @param bilanganPertama Bilangan pertama
+     * @param bilanganKedua Bilangan kedua
+     * @return Hasil pembagian bilanganPertama dengan bilanganKedua
+     * @throws ArithmeticException jika bilanganKedua adalah nol
      */
-    public double bagi(double angka1, double angka2) {
-        if (angka2 == 0) {
+    public double bagi(double bilanganPertama, double bilanganKedua) {
+        if (bilanganKedua == 0) {
             throw new ArithmeticException("Pembagian dengan nol tidak diizinkan.");
         }
-        return angka1 / angka2;
+        return bilanganPertama / bilanganKedua;
     }
 
     /**
-     * Program utama untuk menjalankan kalkulator dengan input manual dan perulangan.
+     * Program utama yang menyediakan antarmuka berbasis teks untuk pengguna
+     * untuk memilih operasi dan memasukkan bilangan, serta menampilkan hasil operasi.
      *
      * @param args Argumen baris perintah (tidak digunakan)
      */
@@ -76,26 +77,27 @@ public class Kalkulator {
             }
 
             System.out.print("Masukkan bilangan pertama: ");
-            double angka1 = scanner.nextDouble();
+            double bilanganPertama = scanner.nextDouble();
 
             System.out.print("Masukkan bilangan kedua: ");
-            double angka2 = scanner.nextDouble();
+            double bilanganKedua = scanner.nextDouble();
 
             double hasil = 0;
 
+            // Mengeksekusi operasi sesuai dengan pilihan pengguna
             switch (pilihan) {
                 case 1:
-                    hasil = kalkulator.tambah(angka1, angka2);
+                    hasil = kalkulator.tambah(bilanganPertama, bilanganKedua);
                     break;
                 case 2:
-                    hasil = kalkulator.kurang(angka1, angka2);
+                    hasil = kalkulator.kurang(bilanganPertama, bilanganKedua);
                     break;
                 case 3:
-                    hasil = kalkulator.kali(angka1, angka2);
+                    hasil = kalkulator.kali(bilanganPertama, bilanganKedua);
                     break;
                 case 4:
                     try {
-                        hasil = kalkulator.bagi(angka1, angka2);
+                        hasil = kalkulator.bagi(bilanganPertama, bilanganKedua);
                     } catch (ArithmeticException e) {
                         System.out.println(e.getMessage());
                         continue;
